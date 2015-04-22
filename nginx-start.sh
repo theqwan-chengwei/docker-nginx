@@ -22,6 +22,7 @@ server {
                include                         /etc/nginx/fastcgi_params;
                fastcgi_param                   SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
         }
+}
 END
 
 cat <<END > /etc/nginx/nginx.conf
