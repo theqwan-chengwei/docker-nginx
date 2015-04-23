@@ -53,6 +53,6 @@ fi
 
 SITE_ROOT=$(echo $NGINX_SITE_ROOT | sed 's/[\/&]/\\&/g')
 
-sed -i 's/root path/'$SITE_ROOT'/g' /etc/nginx/conf.d/default.conf
+sed -i 's/root path/root '$SITE_ROOT'/g' /etc/nginx/conf.d/default.conf
 
 /usr/sbin/nginx -g 'daemon off;'
