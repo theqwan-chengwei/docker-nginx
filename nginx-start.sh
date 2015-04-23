@@ -51,6 +51,8 @@ if [ -z "$NGINX_SITE_ROOT" ]; then
 	exit 1
 fi
 
-sed -i 's/root path/'$NGINX_SITE_ROOT'/g' /etc/nginx/conf.d/default.conf
+SITE_ROOT = $(echo $NGINX_SITE_ROOT | sed 's/[\/&]/\\&/g')
+
+sed -i 's/root path/'$SITE_ROOT'/g' /etc/nginx/conf.d/default.conf
 
 /usr/sbin/nginx -g 'daemon off;'
