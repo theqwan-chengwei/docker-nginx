@@ -13,7 +13,7 @@ server {
 
         root path;
         index index.html index.htm index.php;
-
+}
 END
 
 cat <<END > /etc/nginx/nginx.conf
