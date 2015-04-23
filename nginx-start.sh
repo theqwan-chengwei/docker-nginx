@@ -67,7 +67,7 @@ fi
 
 sed -i 's/127.0.0.1:9000/'$PHPFPM_PORT_9000_TCP_ADDR':'$PHPFPM_PORT_9000_TCP_PORT'/g' /etc/nginx/conf.d/default.conf
 
-SITE_ROOT = $(echo $NGINX_SITE_ROOT | sed 's/[\/&]/\\&/g')
+SITE_ROOT=$(echo $NGINX_SITE_ROOT | sed 's/[\/&]/\\&/g')
 
 sed -i 's/root path/'$SITE_ROOT'/g' /etc/nginx/conf.d/default.conf
 
