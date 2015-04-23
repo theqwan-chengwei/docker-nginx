@@ -51,7 +51,7 @@ if [ -z "$NGINX_SITE_ROOT" ]; then
 	exit 1
 fi
 
-SITE_ROOT = $(echo $NGINX_SITE_ROOT | sed 's/[\/&]/\\&/g')
+SITE_ROOT=$(echo $NGINX_SITE_ROOT | sed 's/[\/&]/\\&/g')
 
 sed -i 's/root path/'$SITE_ROOT'/g' /etc/nginx/conf.d/default.conf
 
